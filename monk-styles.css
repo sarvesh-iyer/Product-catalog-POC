@@ -1,0 +1,136 @@
+
+.wrapper{
+    background-color: #0b3d16;
+    color: white;
+    font-family: monospace;
+  	padding-top: 80px;
+}
+.head{
+    display: flex;
+}
+.head h1{
+    font-family: Bahnschrift;
+    font-size: 80px;
+    font-weight: 300;
+    margin-bottom: 80px;
+    margin-left: 10%;
+}
+
+.head p{
+    font-size: 17px;
+    font-family: Bahnschrift Light;
+    margin-top: 100px;
+    margin-left: 20%;
+}
+
+.head img{
+    width: 15px;
+    height: 15px;
+
+}
+
+table{
+    width: 100%;
+    font-size: 18px;
+}
+
+table, td{
+    border-collapse: collapse;
+    border: 1px solid #646334;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.product_img{
+    text-align: center;
+    margin-right: 0;
+}
+.product_img img{
+    height: 500px;
+    margin: 20px;
+}
+
+ul{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+ul li{
+    display: flex;
+    margin-top: 8px;
+}
+
+ul li img{
+    width: 25px;
+    height: 25px;
+}
+
+.quantity{
+    text-align: right;
+    color: #988965;
+    font-size: 18px;
+    vertical-align: top;
+    padding-top: 120px;
+    padding-right: 15px;
+}
+
+.price{
+    text-align: center;
+    color: #988965;
+    font-size: 19px;
+    font-family: monospace; 
+}
+
+.product-name{
+    padding:70px 0 10px 20px;
+}
+
+.product-name p{
+    padding: 0;
+    margin: 0; 
+    font-size: 18px;
+    font-family: monospace; 
+    
+}
+.product-name h1{
+    padding: 0;
+    margin: 0;
+    font-size: 60px;
+    font-family: Bahnschrift Light;
+    font-weight: 300;
+}
+.desc{
+    padding-left: 20px;
+  	padding-right: 10px;
+}
+
+.incoming h2{
+    font-family: Bahnschrift Light;
+    font-size: 45px;
+    margin-bottom: 10px;
+    margin-left: 15%;
+
+}
+.incoming{
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+.incoming table{
+    width: 70%;
+    border: none;
+    margin: 0 auto;
+    border-top: 2px solid white;
+}
+.incoming table td{
+    border: none;
+    border-bottom: 2px solid white;
+    border-collapse: collapse;
+    padding: 20px;    
+}
+
+.incoming table tr td:nth-child(2){
+    padding-left: 15%;
+}
+

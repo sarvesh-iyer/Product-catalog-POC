@@ -1,0 +1,81 @@
+{{ 'monk-styles.css' | asset_url | stylesheet_tag }}
+
+
+    <div class="wrapper">
+        <div class="head">
+            <h1>GOODS <br> AVAILABLE <br> THIS MONTH</h1>
+            <p><img src="{{ 'list.png' | asset_url }}" alt=""> We do 9 products at a time WHY?</p>
+        </div>
+        <table> 
+          {% for product in collections.all.products %}
+            {% assign quantity = 0 %}
+          	{% for variant in product.variants %}
+          		{% assign quantity = quantity | plus:variant.inventory_quantity %}
+          	{% endfor %}
+          {% if quantity > 0 %}
+          	<tr>
+                <td rowspan="3" class="quantity" width="10%">{{quantity}} left</td>
+                <td rowspan="3" class="product_img" width="20%"><img src="{{ product.featured_image| img_url:'large' }}" alt="person wearing sulivan"></td>
+                <td colspan="2" width="70%" class="product-name">
+                    <p>OXFORD COTTON BUTTON DOWN</p>
+                    <h1>{{product.title | truncatewords: 8, ""}}</h1>
+                </td>
+            </tr>
+            <tr>
+                <td width="35%" class="desc">{{product.description | truncatewords: 25, ""}}</td>
+                <td rowspan="2" class="price" width="35%">Rs {{product.price_max | divided_by: 100}}/-</td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                      {% for product_option in product.options_with_values %}
+                        {% for value in product_option.values %}
+                      		{% if product_option.name == 'Color' %}
+                          		<li><img src="{{ value | handleize | append: '.png'| file_url }}" alt="white">&nbsp; {{value}}</li>
+                        	{% endif %}
+                      	{% endfor %}
+                      {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+          	{% endif %}
+		   {% endfor %}
+        </table>
+
+        <div class="incoming">
+            <h2>Incoming</h2>
+            <table>
+                <tr>
+                    <td>Chambray DENIM</td>
+                    <td>MARCH 21</td>
+                </tr>
+                <tr>
+                    <td>Chambray DENIM</td>
+                    <td>JUN 4</td>
+                </tr><tr>
+                    <td>Chambray DENIM</td>
+                    <td>JUN 4</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+{% schema %}
+  {
+    "name": "Goods Available",
+    "settings": [],
+
+	"presets" : [
+		{
+			"category": "Preview",
+			"name": "Goods Available"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
